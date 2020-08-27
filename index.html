@@ -21,18 +21,18 @@
 </head>
 
 <body>
-  <form action="inicio.html" class="login">
+  <form action="inicio.html" class="login" id="formulario">
     <img src="img/login.png" alt="">
     <p>Iniciar sesión</p>
     <div class="cont-campos">
       <label>Usuario</label>
       <br>
-      <input type="text" class="campo" required>
+      <input id="usuario" type="text" class="campo" required>
     </div>
     <div class="cont-campos">
       <label>Contraseña</label>
       <br>
-      <input type="password" class="campo" minlength="3" required>
+      <input id="contrasenia" type="password" class="campo" minlength="3" required>
     </div>
     <input type="submit" id="boton" value="Ingresar">
   </form>
