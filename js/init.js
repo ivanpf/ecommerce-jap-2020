@@ -44,10 +44,13 @@ var getJSONData = function (url) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-  // document.getElementById('nombreUsuario').innerHTML = sessionStorage.getItem("usuario")
+  var loc = window.location.pathname;
+  var dir = loc.substring(loc.length, loc.lastIndexOf('/'));
   if (sessionStorage.getItem("usuario")) {
     document.getElementById("nombreUsuario").innerHTML = sessionStorage.getItem("usuario");
   } else {
-    document.getElementById("nombreUsuario").innerHTML = "Ingresar";
+    if (dir != "/login.html") {
+      window.location.href = "login.html"
+    }
   }
 });

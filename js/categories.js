@@ -5,6 +5,36 @@ var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
+const RESULTADO_DE_BUSQUEDA = document.querySelector('#cat-list-container');
+let busqueda = document.querySelector('#buscador');
+
+function buscarProductos() {
+    RESULTADO_DE_BUSQUEDA.innerHTML = '';
+    const DATO = busqueda.value.toLowerCase();
+    let nombre, descripcion;
+    for (let categoria of currentCategoriesArray) {
+        nombre = categoria.name.toLowerCase();
+        descripcion = categoria.description.toLowerCase();
+        if (nombre.indexOf(DATO) !== -1 || descripcion.indexOf(DATO) !== -1) {
+            RESULTADO_DE_BUSQUEDA.innerHTML += `
+            <a href="category-info.html" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="` + categoria.imgSrc + `" alt="` + categoria.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">` + categoria.name + `</h4>
+                            <small class="text-muted">` + categoria.productCount + ` artículos</small>
+                        </div>
+                        <p class="mb-1">` + categoria.description + `</p>
+                    </div>
+                </div>
+            </a>
+            `
+        }
+    }
+}
 
 function sortCategories(criteria, array) {
     let result = [];
@@ -142,4 +172,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showCategoriesList();
     });
+
+    document.getElementById('buscador').addEventListener('input', buscarProductos);
 });

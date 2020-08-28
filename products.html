@@ -16,13 +16,14 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="site-header sticky-top py-1 bg-dark" id="barra-nav" id="barra-nav">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" id="nombreUsuario" href="my-profile.html">Ingresar</a>
     </div>
   </nav>
   <main role="main" class="pb-5">
@@ -41,13 +42,16 @@
               <input type="radio" name="options" autocomplete="off">$$-$
             </label>
             <label class="btn btn-light" id="sortByCost">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+              <input type="radio" name="options" autocomplete="off"><i
+                class="fas fa-sort-amount-down mr-1"></i>Relevancia
             </label>
           </div>
         </div>
       </div>
       <div class="row justify-content-end">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <input type="search" placeholder="Buscar" class="form-control" id="buscador">
+        </div>
         <div class="col-md-6 col-sm-12 mb-1 container">
           <div class="row container p-0 m-0">
             <div class="col">
