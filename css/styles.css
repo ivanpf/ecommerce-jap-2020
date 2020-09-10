@@ -22,6 +22,87 @@
   font-weight: bold;
 }
 
+#enviar-comment {
+  cursor: pointer;
+}
+
+#comment-content {
+  width: 500px;
+}
+
+.labels-comment {
+  margin-bottom: 2px;
+}
+
+#new-comment-form {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  cursor: default;
+}
+
+.cont-relacionados {
+  max-width: 350px;
+}
+
+#categoryName {
+  text-align: center;
+}
+
+#productName {
+  text-align: center;
+}
+
+.fa {
+  font-size: 10px;
+  color: #495057;
+}
+
+.star-new-comment {
+  font-size: 20px;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.checked {
+  color: orange;
+}
+
+#productComments {
+  margin-bottom: 33px;
+}
+
+#productComments>div {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+#productComments div:hover {
+  background-color: white;
+}
+
+#comment-user-cont {
+  display: flex;
+  margin-top: 3px;
+}
+
+#comment-score {
+  margin-bottom: 0;
+}
+
+#comment-user {
+  margin-right: 10px;
+  font-weight: 501;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#comment-date {
+  font-weight: 300;
+  font-size: 12px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 #barra-nav {
   opacity: 95%;
 }

@@ -116,7 +116,7 @@ function sortAndShowProducts(sortCriteria, productsArray) {
 
     currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray);
 
-    //Muestro las categorías ordenadas
+    //Muestro los productos ordenados
     showProductsList();
 }
 
@@ -153,8 +153,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.getElementById("rangeFilterCost").addEventListener("click", function () {
-        //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
-        //de productos por categoría.
+        //Obtengo el mínimo y máximo de los intervalos para filtrar por precio de productos
         minCost = document.getElementById("rangeFilterCostMin").value;
         maxCost = document.getElementById("rangeFilterCostMax").value;
 
@@ -172,6 +171,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showProductsList();
     });
-
     document.getElementById('buscador').addEventListener('input', buscarProductos);
 });
