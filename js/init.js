@@ -40,6 +40,14 @@ var getJSONData = function (url) {
     });
 }
 
+function cerrarSesion() {
+  if (sessionStorage.getItem("usuario")) {
+    sessionStorage.removeItem("usuario");
+    sessionStorage.removeItem("contrasenia");
+    window.location.href = "login.html";
+  }
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -47,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
   var loc = window.location.pathname;
   var dir = loc.substring(loc.length, loc.lastIndexOf('/'));
   if (sessionStorage.getItem("usuario")) {
-    document.getElementById("nombreUsuario").innerHTML = sessionStorage.getItem("usuario");
+    document.getElementById("dropdownMenuButton").innerHTML = sessionStorage.getItem("usuario");
+    console.log(sessionStorage.getItem("usuario"));
   } else {
     if (dir != "/login.html") {
       window.location.href = "login.html"

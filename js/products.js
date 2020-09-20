@@ -25,7 +25,7 @@ function buscarProductos() {
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">` + producto.name + `</h4>
-                            <small class="text-muted">U$D ` + producto.cost + `</small>
+                            <small class="precio-producto">U$D ` + producto.cost + `</small>
                         </div>
                         <p class="mb-1">` + producto.description + `</p>
                     </div>

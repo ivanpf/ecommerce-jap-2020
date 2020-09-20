@@ -11,7 +11,6 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -36,22 +35,48 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark" id="barra-nav">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="nombreUsuario" href="my-profile.html">Ingresar</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="sell.html">Vender</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" onclick="cerrarSesion()">Cerrar sesion</a>
+        </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Tu carrito</h2>
+      <p class="lead">Verás aquí todos los productos de tu carrito.</p>
     </div>
-  </div>
+    <div class="container">
+      <div class="row">
+        <p class="cart-title col">Producto</p>
+        <p class="cart-title col-2">Precio unitario</p>
+        <p class="cart-title col-3">Cantidad</p>
+        <p class="cart-title col-2">Precio total</p>
+        <p class="cart-title col-1"></p>
+      </div>
+      <div class="list-group" id="cart-list-container">
+      </div>
+    </div>
+  </main>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

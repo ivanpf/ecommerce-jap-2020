@@ -87,14 +87,14 @@ function makeComment() {
             <div class="list-group-item list-group-item-action">
                 <p id="comment-score">` + estrellasToAppend + `</p>
                 <div id="comment-user-cont">
-                    <p id="comment-user">` + document.getElementById('nombreUsuario').textContent + `</p>
+                    <p id="comment-user">` + document.getElementById('dropdownMenuButton').textContent + `</p>
                     <p id="comment-date">` + fecha.getFullYear() + `-` + ("0" + fecha.getMonth()).slice(-2) + `-` + ("0" + fecha.getDay()).slice(-2) + ` ` + ("0" + fecha.getHours()).slice(-2) + `:` + ("0" + fecha.getMinutes()).slice(-2) + `:` + ("0" + fecha.getSeconds()).slice(-2) + `</p>
                 </div>
                 <p>` + document.getElementById('comment-content').value + `</p>
             </div>
             `;
             estrellasToAppend = "";
-            document.getElementById("productComments").innerHTML += htmlContentToAppend;
+            document.getElementById("product-comments").innerHTML += htmlContentToAppend;
 
             //Una vez hecho el comentario vuelvo los valores a su inicio
             document.getElementById('comment-content').value = '';
@@ -118,8 +118,8 @@ function showComments(array_comentarios) {
         let comment = array_comentarios[i];
         for (let u = 0; u < comment.score; u++) {
             estrellasToAppend += `
-                    <span class="fa fa-star checked"></span>
-                    `;
+                <span class="fa fa-star checked"></span>
+                `;
         }
         for (let u = 0; u < 5 - comment.score; u++) {
             estrellasToAppend += `
@@ -138,21 +138,33 @@ function showComments(array_comentarios) {
             `;
         estrellasToAppend = "";
     }
-    document.getElementById("productComments").innerHTML = htmlContentToAppend;
+    document.getElementById("product-comments").innerHTML = htmlContentToAppend;
 }
 
 function showImagesGallery(array) {
-    let htmlContentToAppend = "";
+    let htmlImageToAppend = "";
+    let htmlLiToAppend = "";
     for (let i = 0; i < array.length; i++) {
-        let imageSrc = array[i];
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+        if (i === 0) {
+            htmlLiToAppend += `
+            <li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>
+            `;
+            htmlImageToAppend += `
+            <div class="carousel-item active">
+                <img src="${array[i]}" class="d-block w-100">
             </div>
-        </div>
-        `;
-
-        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
+            `;
+        } else {
+            htmlLiToAppend += `
+            <li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>
+            `;
+            htmlImageToAppend += `
+            <div class="carousel-item">
+                <img src="${array[i]}" class="d-block w-100">
+            </div>
+            `;
+        }
+        document.getElementById("li-carousel-container").innerHTML = htmlLiToAppend;
+        document.getElementById("img-carousel-container").innerHTML = htmlImageToAppend;
     }
 }

@@ -19,12 +19,20 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark" id="barra-nav">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="nombreUsuario" href="my-profile.html">Ingresar</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block barra-nav-item" href="sell.html">Vender</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" onclick="cerrarSesion()">Cerrar sesion</a>
+        </div>
+      </div>
     </div>
   </nav>
   <main role="main">
@@ -54,13 +62,25 @@
 
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators" id="li-carousel-container">
+            </ol>
+            <div class="carousel-inner" id="img-carousel-container">
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </dd>
 
         <dt>Comentarios</dt>
         <dd>
-          <div id="productComments">
+          <div id="product-comments">
           </div>
         </dd>
 

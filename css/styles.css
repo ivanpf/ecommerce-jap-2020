@@ -67,16 +67,16 @@
   color: orange;
 }
 
-#productComments {
+#product-comments {
   margin-bottom: 33px;
 }
 
-#productComments>div {
+#product-comments>div {
   margin-top: 10px;
   border-radius: 5px;
 }
 
-#productComments div:hover {
+#product-comments div:hover {
   background-color: white;
 }
 
@@ -107,22 +107,56 @@
   opacity: 95%;
 }
 
-#barra-nav a {
+.barra-nav-item {
   color: #CCCCCC;
+}
+
+.barra-nav-item:hover {
+  color: #FFFFFF;
   text-decoration: none;
 }
 
-#barra-nav a:hover {
-  color: #FFFFFF;
+.dropdown-item {
+  cursor: pointer;
+  color: #495057;
 }
 
-#nombreUsuario {
-  background-color: #4D525C;
-  padding-right: 13px;
-  padding-left: 13px;
-  border-radius: 5px;
-  height: 40px;
+.carousel {
+  width: 50%;
+  margin-top: 15px;
+  margin-bottom: 33px;
 }
+
+.cart-item {
+  text-align: center;
+  margin-top: auto;
+}
+
+.cart-title {
+  text-align: center;
+}
+
+.cart-item-img {
+  max-width: 60px;
+}
+
+.cart-img-name-cont {
+  display: flex;
+  text-align: center;
+}
+
+.precio-producto {
+  font-weight: bolder;
+}
+
+.carousel-inner {
+  border-radius: 5px;
+}
+
+/* .carousel-control-prev,
+.carousel-control-next {
+  background-color: red;
+} */
 
 @media (min-width: 768px) {
   .jumbotron {
@@ -160,7 +194,6 @@ footer p {
 }
 
 .site-header a {
-  color: white;
   transition: ease-in-out color .15s;
 }
 
