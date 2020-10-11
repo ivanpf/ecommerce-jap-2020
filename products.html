@@ -43,20 +43,20 @@
       <div class="row">
         <div class="col text-right">
           <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-            <label class="btn btn-light active" id="sortAsc">
+            <label class="btn btn-light btnFiltros active" id="sortAsc">
               <input type="radio" name="options" autocomplete="off" checked>$-$$
             </label>
-            <label class="btn btn-light" id="sortDesc">
+            <label class="btn btn-light btnFiltros" id="sortDesc">
               <input type="radio" name="options" autocomplete="off">$$-$
             </label>
-            <label class="btn btn-light" id="sortByCost">
+            <label class="btn btn-light btnFiltros" id="sortByCost">
               <input type="radio" name="options" autocomplete="off"><i
                 class="fas fa-sort-amount-down mr-1"></i>Relevancia
             </label>
           </div>
         </div>
       </div>
-      <div class="row justify-content-end">
+      <div class="row justify-content-end mb-2">
         <div class="col-md-6">
           <input type="search" placeholder="Buscar" class="form-control" id="buscador">
         </div>
@@ -73,8 +73,8 @@
             </div>
             <div class="col-3 p-0">
               <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                <button class="btn btnFiltros btn-light btn-block" id="rangeFilterCost">Filtrar</button>
+                <button class="btn btnFiltros btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
       </div>
     </div>
   </main>
-  <footer class="text-muted bg-light">
+  <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>

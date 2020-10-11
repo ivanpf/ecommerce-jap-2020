@@ -12,22 +12,22 @@ function buscarProductos() {
     RESULTADO_DE_BUSQUEDA.innerHTML = '';
     const DATO = busqueda.value.toLowerCase();
     let nombre, descripcion;
-    for (let producto of currentProductsArray) {
-        nombre = producto.name.toLowerCase();
-        descripcion = producto.description.toLowerCase();
+    for (let product of currentProductsArray) {
+        nombre = product.name.toLowerCase();
+        descripcion = product.description.toLowerCase();
         if ((nombre.indexOf(DATO) !== -1 || descripcion.indexOf(DATO) !== -1)) {
             RESULTADO_DE_BUSQUEDA.innerHTML += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + producto.imgSrc + `" alt="` + producto.description + `" class="img-thumbnail">
+                        <img src="` + product.imgSrc + `" class="img-thumbnail">
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">` + producto.name + `</h4>
-                            <small class="precio-producto">U$D ` + producto.cost + `</small>
+                            <h4 class="mb-2">` + product.name + `</h4>
                         </div>
-                        <p class="mb-1">` + producto.description + `</p>
+                        <h5 class="mb-4 product-cost">U$D ` + product.cost + `</h5>
+                        <p>` + product.description + `</p>
                     </div>
                 </div>
             </a>
@@ -90,14 +90,14 @@ function showProductsList() {
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                        <img src="` + product.imgSrc + `" class="img-thumbnail">
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">` + product.name + `</h4>
-                            <small class="text-muted">U$D ` + product.cost + `</small>
+                            <h4 class="mb-2">` + product.name + `</h4>
                         </div>
-                        <p class="mb-1">` + product.description + `</p>
+                        <h5 class="mb-4 product-cost">U$D ` + product.cost + `</h5>
+                        <p>` + product.description + `</p>
                     </div>
                 </div>
             </a>
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("clearRangeFilter").addEventListener("click", function () {
         document.getElementById("rangeFilterCostMin").value = "";
-        document.getElementById("rangeFilterCoStMax").value = "";
+        document.getElementById("rangeFilterCostMax").value = "";
 
         minCost = undefined;
         maxCost = undefined;

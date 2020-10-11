@@ -1,3 +1,7 @@
+body {
+  background-color: #F8F9FA;
+}
+
 .jumbotron,
 .card-body,
 .container,
@@ -27,7 +31,7 @@
 }
 
 #comment-content {
-  width: 500px;
+  width: 430px;
 }
 
 .labels-comment {
@@ -41,15 +45,33 @@
 }
 
 .cont-relacionados {
-  max-width: 350px;
+  max-width: 360px;
 }
 
 #categoryName {
   text-align: center;
 }
 
-#productName {
-  text-align: center;
+#costAndcount-container {
+  display: flex;
+}
+
+#productCost {
+  font-weight: bolder;
+  margin-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#container-text-prod,
+#container-img-prod {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#productSoldCount {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .fa {
@@ -121,42 +143,48 @@
   color: #495057;
 }
 
+.bi-x:hover {
+  color: red;
+  cursor: pointer;
+  transition: ease-in-out color .13s;
+}
+
 .carousel {
-  width: 50%;
   margin-top: 15px;
   margin-bottom: 33px;
 }
 
-.cart-item {
-  text-align: center;
-  margin-top: auto;
+#form-metodo-envio {
+  margin-top: 20px;
 }
 
-.cart-title {
-  text-align: center;
+.cart-item-container,
+#container-img-h5-cart {
+  display: flex;
+  align-items: center;
 }
 
 .cart-item-img {
-  max-width: 60px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
-.cart-img-name-cont {
-  display: flex;
-  text-align: center;
+#pais-select {
+  width: 250px;
 }
 
-.precio-producto {
+.control-envio {
+  width: 350px;
+}
+
+.product-cost {
   font-weight: bolder;
 }
 
 .carousel-inner {
   border-radius: 5px;
 }
-
-/* .carousel-control-prev,
-.carousel-control-next {
-  background-color: red;
-} */
 
 @media (min-width: 768px) {
   .jumbotron {
@@ -184,9 +212,19 @@
   font-size: 38px;
 }
 
+.btnFiltros {
+  background-color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
 footer {
+  margin-top: 40px;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
+  background-color: white;
 }
 
 footer p {
@@ -282,4 +320,15 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.comment-container {
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .cont-relacionados {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

@@ -37,35 +37,47 @@
   </nav>
   <main role="main">
     <div class="container mt-5">
-      <!-- <div class="text-center p-4">
-        <h2>Descripción de la categoría</h2>
-        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
-      </div> -->
-      <h3 id="categoryName"></h3>
-      <hr class="my-3">
-      <dl>
-        <dt>Descripción</dt>
-        <dd>
-          <p id="categoryDescription"></p>
-        </dd>
-
-        <dt>Cantidad de productos en la categoría</dt>
-        <dd>
-          <p id="productCount"></p>
-        </dd>
-
-        <dt>Criterio para incluir productos en esta categoría</dt>
-        <dd>
-          <p id="productCriteria"></p>
-        </dd>
-
-        <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+      <div class="row" style="height:400px;">
+        <div class="col-6 my-auto">
+          <dl>
+            <dd>
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators" id="li-carousel-container">
+                </ol>
+                <div class="carousel-inner" id="img-carousel-container" style="width: auto; height: 300px;">
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-6 my-auto">
+          <div>
+            <h3 class="mr-1 pt-1 text-left" id="categoryName"></h3>
+            <p id="productCount"></p>
           </div>
-        </dd>
-      </dl>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+          <div>
+            <dl>
+              <dt>Descripción</dt>
+              <dd>
+                <p id="categoryDescription"></p>
+              </dd>
+              <dt>Criterio para incluir productos en esta categoría</dt>
+              <dd>
+                <p id="productCriteria"></p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <a type="button" class="btn btn-primary mt-2 btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
   <footer class="text-muted">

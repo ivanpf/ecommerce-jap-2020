@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
-            productSoldCountHTML.innerHTML = product.soldCount;
+            productSoldCountHTML.innerHTML = product.soldCount + " vendidos";
             productCategoryHTML.innerHTML = product.category;
             productCostHTML.innerHTML = "U$D " + product.cost;
             showImagesGallery(product.images);
@@ -127,7 +127,7 @@ function showComments(array_comentarios) {
                 `;
         }
         htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action">
+            <div class="list-group-item list-group-item-action comment-container">
                 <p id="comment-score">` + estrellasToAppend + `</p>
                 <div id="comment-user-cont">
                     <p id="comment-user">` + comment.user + `</p>
@@ -168,3 +168,10 @@ function showImagesGallery(array) {
         document.getElementById("img-carousel-container").innerHTML = htmlImageToAppend;
     }
 }
+
+// const algo = matchMedia("(min-width: 767px)");
+// const cambiartamanio = mq => {
+//     if (mq.mtaches) {
+//         document.getElementById('container-padre-prod').parentNode.removeChild('container-img-prod');
+//     }
+// }

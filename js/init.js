@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
   var dir = loc.substring(loc.length, loc.lastIndexOf('/'));
   if (sessionStorage.getItem("usuario")) {
     document.getElementById("dropdownMenuButton").innerHTML = sessionStorage.getItem("usuario");
-    console.log(sessionStorage.getItem("usuario"));
   } else {
     if (dir != "/login.html") {
       window.location.href = "login.html"

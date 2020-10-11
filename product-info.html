@@ -37,72 +37,68 @@
   </nav>
   <main role="main">
     <div class="container mt-5">
-      <h3 id="productName"></h3>
-      <hr class="my-3">
-      <dl>
-        <dt>Descripción</dt>
-        <dd>
-          <p id="productDescription"></p>
-        </dd>
-
-        <dt>Categoria</dt>
-        <dd>
-          <p id="productCategory"></p>
-        </dd>
-
-        <dt>Vendidos</dt>
-        <dd>
-          <p id="productSoldCount"></p>
-        </dd>
-
-        <dt>Precio</dt>
-        <dd>
-          <p id="productCost"></p>
-        </dd>
-
-        <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators" id="li-carousel-container">
-            </ol>
-            <div class="carousel-inner" id="img-carousel-container">
+      <div class="row mb-3" id="container-padre-prod">
+        <div class="col-7" id="container-img-prod">
+          <dd>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators" id="li-carousel-container">
+              </ol>
+              <div class="carousel-inner" id="img-carousel-container">
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </dd>
+          </dd>
+        </div>
+        <div class="col-5" id="container-text-prod">
+          <h3 class="mb-2" id="productName"></h3>
+          <dl>
+            <dd id="costAndcount-container" class="mb-3">
+              <h4 id="productCost"></h4>
+              <p id="productSoldCount"></p>
+            </dd>
+            <dt>Categoria</dt>
+            <dd>
+              <p id="productCategory"></p>
+            </dd>
+            <dt>Descripción</dt>
+            <dd>
+              <p id="productDescription"></p>
+            </dd>
+        </div>
+      </div>
 
-        <dt>Comentarios</dt>
-        <dd>
-          <div id="product-comments">
-          </div>
-        </dd>
-
-        <dt>Haz un comentario</dt>
-        <dd>
-          <form action="" id="new-comment-form">
-            <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="1one"></span>
-            <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="2one"></span>
-            <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="3one"></span>
-            <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="4one"></span>
-            <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="5one"></span>
-            <br>
-            <label class="labels-comment">Escriba su comentario</label>
-            <textarea class="form-control" name="" id="comment-content" cols="30" rows="2" resize="vertical"></textarea>
-            <br>
-            <input class="btn btn-primary btn-lg" id="enviar-comment" value="Comentar" readonly>
-          </form>
-        </dd>
+      <hr>
+      <dt>Comentarios</dt>
+      <dd>
+        <div id="product-comments">
+        </div>
+      </dd>
+      <dt>Haz un comentario</dt>
+      <dd>
+        <form action="" id="new-comment-form">
+          <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="1one"></span>
+          <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="2one"></span>
+          <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="3one"></span>
+          <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="4one"></span>
+          <span class="fa fa-star star-new-comment" onclick="marcarEstrella(this)" id="5one"></span>
+          <br>
+          <label class="labels-comment">Escriba su comentario</label>
+          <textarea class="form-control" id="comment-content" cols="30" rows="2" resize="vertical"></textarea>
+          <br>
+          <input class="btn btn-primary btn-lg" id="enviar-comment" value="Comentar" readonly>
+        </form>
+      </dd>
       </dl>
 
-      <dt>Productos relacionados</dt>
-      <hr class="my-3">
+      <hr>
+      <dt class="my-3">Productos relacionados</dt>
       <dd>
         <div class="container-fluid">
           <div class="row" id="relatedProductsContainer">

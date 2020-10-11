@@ -1,21 +1,30 @@
 var category = {};
 
 function showImagesGallery(array) {
-
-    let htmlContentToAppend = "";
-
+    let htmlImageToAppend = "";
+    let htmlLiToAppend = "";
     for (let i = 0; i < array.length; i++) {
-        let imageSrc = array[i];
-
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+        if (i === 0) {
+            htmlLiToAppend += `
+            <li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>
+            `;
+            htmlImageToAppend += `
+            <div class="carousel-item active">
+                <img src="${array[i]}" class="d-block">
             </div>
-        </div>
-        `
-
-        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
+            `;
+        } else {
+            htmlLiToAppend += `
+            <li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>
+            `;
+            htmlImageToAppend += `
+            <div class="carousel-item">
+                <img src="${array[i]}" class="d-block">
+            </div>
+            `;
+        }
+        document.getElementById("li-carousel-container").innerHTML = htmlLiToAppend;
+        document.getElementById("img-carousel-container").innerHTML = htmlImageToAppend;
     }
 }
 
@@ -34,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             categoryNameHTML.innerHTML = category.name;
             categoryDescriptionHTML.innerHTML = category.description;
-            productCountHTML.innerHTML = category.productCount;
+            productCountHTML.innerHTML = "(" + category.productCount + " productos)";
             productCriteriaHTML.innerHTML = category.productCriteria;
 
-            //Muestro las imagenes en forma de galería
+            //Muestro las imagenes en forma de carousel
             showImagesGallery(category.images);
         }
     });
