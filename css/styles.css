@@ -231,6 +231,10 @@ footer p {
   margin-bottom: .25rem;
 }
 
+#alertDiv {
+  transition: ease-in-out 1s;
+}
+
 .site-header a {
   transition: ease-in-out color .15s;
 }

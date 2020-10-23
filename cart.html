@@ -73,11 +73,11 @@
           <form id="form-metodo-envio">
             <h5 class="mb-3">Envio</h5>
             <label>Calle</label>
-            <input type="text" class="form-control control-envio mb-2">
+            <input type="text" class="form-control control-envio mb-2" id="dirCalle">
             <label>Número</label>
-            <input type="text" class="form-control control-envio mb-2">
+            <input type="number" class="form-control control-envio mb-2" id="dirNum">
             <label>Esquina</label>
-            <input type="text" class="form-control control-envio mb-2">
+            <input type="text" class="form-control control-envio mb-2" id="dirEsq">
             <br>
             <label>Pais</label>
             <select name="pais" class="custom-select d-block" id="pais-select">
@@ -321,17 +321,15 @@
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
                 <input id="premiumRadio" name="deliveryType" type="radio" value="0.15" class="custom-control-input"
-                  checked="" required="">
+                  checked>
                 <label class="custom-control-label" for="premiumRadio">Premium</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="expressRadio" name="deliveryType" type="radio" value="0.07" class="custom-control-input"
-                  required="">
+                <input id="expressRadio" name="deliveryType" type="radio" value="0.07" class="custom-control-input">
                 <label class="custom-control-label" for="expressRadio">Express</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="standardRadio" name="deliveryType" type="radio" value="0.05" class="custom-control-input"
-                  required="">
+                <input id="standardRadio" name="deliveryType" type="radio" value="0.05" class="custom-control-input">
                 <label class="custom-control-label" for="standardRadio">Estándar</label>
               </div>
               <div class="row">
@@ -365,7 +363,8 @@
               <button type="button" class="m-1 btn btn-link" data-toggle="modal"
                 data-target="#payMethodModal">Seleccionar método de pago</button>
             </div>
-            <button class="btn btn-primary btn-lg">Comprar</button>
+            <button type="button" class="btn btn-primary btn-lg" id="btnComprar"
+              onclick="realizarCompra()">Comprar</button>
           </form>
         </div>
       </div>
@@ -427,40 +426,45 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="container">
-            <div class="row">
-              <div class="mb-2 d-flex">
-                <input class="my-auto mr-2" type="radio" id="cardPayMethod" name="payMethod">
+          <form id="modalForm">
+            <div class="container">
+              <div class="row mb-2 d-flex">
+                <input class="my-auto mr-2" type="radio" id="cardPayMethod" name="payMethod" checked>
                 <h5 class="my-auto">Tarjeta de crédito</h5>
               </div>
-              <form>
+              <div class="row">
                 <label>Número de tarjeta</label>
-                <input type="number" class="form-control mb-2">
-                <label>Código de seg.</label>
-                <input type="text" class="form-control control-envio mb-2">
+                <input type="number" id="numCard" class="form-control control-envio mb-2 cardInput">
+              </div>
+              <div class="row">
+                <label>Código de seguridad</label>
+                <input type="number" id="codCard" class="form-control control-envio mb-2 cardInput">
+              </div>
+              <div class="row">
                 <label>Vencimiento (MM/AA)</label>
-                <input type="text" pattern="\d{2}/\d{2}" class="form-control control-envio mb-2">
-              </form>
-              <!-- <p class="muted text-justify">Pague con su tarjeta de credito de preferencia.</p> -->
-            </div>
-            <hr>
-            <div class="row">
-              <div class="mb-2 d-flex">
-                <input class="my-auto mr-2" type="radio" id="creditPayMethod" name="payMethod">
+                <input type="text" id="venCard" class="form-control control-envio mb-2 cardInput">
+              </div>
+              <hr>
+              <div class="row mb-2 d-flex">
+                <input class="my-auto mr-2" type="radio" id="transferPayMethod" name="payMethod" selected>
                 <h5 class="my-auto">Transferencia bancaria</h5>
               </div>
-              <form>
+              <div class="row">
                 <label>Número de cuenta</label>
-                <input type="text" class="form-control control-envio mb-2">
-              </form>
+                <input type="number" class="form-control control-envio mb-4 transferInput" id="numTrans">
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            <button type="button" class="btn btn-primary" id="aceptarModal" onclick="verificarModal()">Aceptar</button>
+          </form>
         </div>
       </div>
     </div>
+    <div class="alert alert-danger w-auto" role="alert" id="modalAlert" tabindex="-1" style="display: none;">
+    </div>
+  </div>
+  <div class="alert alert-danger" role="alert" id="globalAlert" tabindex="-1" style="display: none;">
+  </div>
+  <div class="alert alert-success" role="alert" id="globalSuccess" tabindex="-1" style="display: none;">
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">

@@ -17,21 +17,20 @@ function buscarProductos() {
         descripcion = product.description.toLowerCase();
         if ((nombre.indexOf(DATO) !== -1 || descripcion.indexOf(DATO) !== -1)) {
             RESULTADO_DE_BUSQUEDA.innerHTML += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" class="img-thumbnail">
+            <div class="card mb-4 " style="max-width: 350px;">
+                <img src="${product.imgSrc}" class="card-img-top w-100" alt="Foto del producto">
+                <div class="card-body">
+                    <h5 class="card-title text-center">${product.name}</h5>
+                    <div style="min-height: 80px;">
+                        <p class="card-text text-center">${product.description}</p>
                     </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-2">` + product.name + `</h4>
-                        </div>
-                        <h5 class="mb-4 product-cost">U$D ` + product.cost + `</h5>
-                        <p>` + product.description + `</p>
+                    <h5 class="font-weight-bolder text-center mb-3">U$D ${product.cost}</h5>
+                    <div class="row justify-content-around">
+                        <a href="product-info.html" class="btn btn-primary col-4">Ver</a>
                     </div>
                 </div>
-            </a>
-            `
+            </div>
+        `
         }
     }
 }
@@ -87,20 +86,19 @@ function showProductsList() {
             ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))) {
 
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-2">` + product.name + `</h4>
+                <div class="card mb-4 " style="max-width: 350px;">
+                    <img src="${product.imgSrc}" class="card-img-top w-100" alt="Foto del producto">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">${product.name}</h5>
+                        <div style="min-height: 80px;">
+                            <p class="card-text text-center">${product.description}</p>
                         </div>
-                        <h5 class="mb-4 product-cost">U$D ` + product.cost + `</h5>
-                        <p>` + product.description + `</p>
+                        <h5 class="font-weight-bolder text-center mb-3">U$D ${product.cost}</h5>
+                        <div class="row justify-content-around">
+                            <a href="product-info.html" class="btn btn-primary col-4">Ver</a>
+                        </div>
                     </div>
                 </div>
-            </a>
             `
         }
     }
@@ -113,9 +111,7 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     if (productsArray != undefined) {
         currentProductsArray = productsArray;
     }
-
     currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray);
-
     //Muestro los productos ordenados
     showProductsList();
 }

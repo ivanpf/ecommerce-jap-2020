@@ -8,29 +8,29 @@ var maxCount = undefined;
 const RESULTADO_DE_BUSQUEDA = document.querySelector('#cat-list-container');
 let busqueda = document.querySelector('#buscador');
 
-function buscarProductos() {
+function buscarCategorias() {
     RESULTADO_DE_BUSQUEDA.innerHTML = '';
     const DATO = busqueda.value.toLowerCase();
     let nombre, descripcion;
-    for (let categoria of currentCategoriesArray) {
-        nombre = categoria.name.toLowerCase();
-        descripcion = categoria.description.toLowerCase();
+    for (let category of currentCategoriesArray) {
+        nombre = category.name.toLowerCase();
+        descripcion = category.description.toLowerCase();
         if (nombre.indexOf(DATO) !== -1 || descripcion.indexOf(DATO) !== -1) {
             RESULTADO_DE_BUSQUEDA.innerHTML += `
-            <a href="category-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + categoria.imgSrc + `" alt="` + categoria.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">` + categoria.name + `</h4>
-                            <small class="text-muted">` + categoria.productCount + ` artículos</small>
+                <div class="card mb-4" style="max-width: 350px;">
+                    <img src="${category.imgSrc}" class="card-img-top w-100" alt="Foto del producto">
+                    <div class="card-body">
+                        <div class="row justify-content-center mb-1">
+                            <h5 class="card-title my-auto mr-1">${category.name}</h5>
+                            <p class="my-auto text-muted">(cant. ${category.productCount})</p>
                         </div>
-                        <p class="mb-1">` + categoria.description + `</p>
+                        <div style="min-height: 70px;">
+                            <p class="card-text text-center">${category.description}</p>
+                        <div class="row justify-content-center">
+                            <a href="product-info.html" class="btn btn-primary" style="width: 100px;">Ver</a>
+                        </div>
                     </div>
                 </div>
-            </a>
             `
         }
     }
@@ -72,12 +72,10 @@ function sortCategories(criteria, array) {
             return 0;
         });
     }
-
     return result;
 }
 
 function showCategoriesList() {
-
     let htmlContentToAppend = "";
     for (let i = 0; i < currentCategoriesArray.length; i++) {
         let category = currentCategoriesArray[i];
@@ -86,20 +84,20 @@ function showCategoriesList() {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))) {
 
             htmlContentToAppend += `
-            <a href="category-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">` + category.name + `</h4>
-                            <small class="text-muted">` + category.productCount + ` artículos</small>
+                <div class="card mb-4" style="max-width: 350px;">
+                    <img src="${category.imgSrc}" class="card-img-top w-100" alt="Foto del producto">
+                    <div class="card-body">
+                        <div class="row justify-content-center mb-1">
+                            <h5 class="card-title my-auto mr-1">${category.name}</h5>
+                            <p class="my-auto text-muted">(cant. ${category.productCount})</p>
                         </div>
-                        <p class="mb-1">` + category.description + `</p>
+                        <divstyle="min-height: 70px;">
+                            <p class="card-text text-center">${category.description}</p>
+                        <div class="row justify-content-center">
+                            <a href="product-info.html" class="btn btn-primary" style="width: 100px;">Ver</a>
+                        </div>
                     </div>
                 </div>
-            </a>
             `
         }
 
@@ -113,9 +111,7 @@ function sortAndShowCategories(sortCriteria, categoriesArray) {
     if (categoriesArray != undefined) {
         currentCategoriesArray = categoriesArray;
     }
-
     currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
-
     //Muestro las categorías ordenadas
     showCategoriesList();
 }
@@ -172,6 +168,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showCategoriesList();
     });
-
-    document.getElementById('buscador').addEventListener('input', buscarProductos);
+    document.getElementById('buscador').addEventListener('input', buscarCategorias);
 });
