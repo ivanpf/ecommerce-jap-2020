@@ -188,20 +188,26 @@ function mostrarProductoCarrito(arrayProductos) {
             htmlContentToAppend = `
                 <div class="list-group-item list-group-item-action" id="cont${i}">
                     <div class="row cart-item-container">
-                        <div class="col" id="container-img-h5-cart">
-                            <img src="` + product.src + `" class="img-thumbnail cart-item-img my-auto">
-                            <h5 class="my-auto text-left">` + product.name + `</h5>
+                        <div class="col text-center my-auto">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-6 col-lg-4 d-none d-sm-block">
+                                    <img src="` + product.src + `" class="img-thumbnail cart-item-img my-auto d-none d-sm-block">
+                                </div>
+                                <div class="col-auto col-lg-8">
+                                    <h5 class="my-auto text-center text-lg-left">` + product.name + `</h5>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 text-center my-auto">
                             <p class="my-auto text-center">` + product.currency + ` ` + product.unitCost + `</p>
                         </div>
-                        <div class="col-2">
-                            <input type="number" class="form-control count-control countInput" id="countInput${i}" value="${product.count}" min="1">
+                        <div class="col-2 text-center my-auto">
+                            <input type="number" class="form-control count-control countInput" id="countInput${i}" value="${product.count}" min="1" style="min-width: 50px;">
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 text-center my-auto">
                             <p class="my-auto text-center font-weight-bold costText" id="costText${i}">` + product.currency + ` ` + productSubTotal(product) + `</p>
                         </div>
-                        <div class="col-1">
+                        <div class="col-1 text-center my-auto">
                             <svg id="borrarCont${i}" width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>

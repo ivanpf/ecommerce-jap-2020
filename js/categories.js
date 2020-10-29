@@ -27,7 +27,7 @@ function buscarCategorias() {
                         <div style="min-height: 70px;">
                             <p class="card-text text-center">${category.description}</p>
                         <div class="row justify-content-center">
-                            <a href="product-info.html" class="btn btn-primary" style="width: 100px;">Ver</a>
+                            <a href="category-info.html" class="btn btn-primary" style="width: 100px;">Ver</a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ function showCategoriesList() {
                         <divstyle="min-height: 70px;">
                             <p class="card-text text-center">${category.description}</p>
                         <div class="row justify-content-center">
-                            <a href="product-info.html" class="btn btn-primary" style="width: 100px;">Ver</a>
+                            <a href="category-info.html" class="btn btn-primary" style="width: 100px;">Ver</a>
                         </div>
                     </div>
                 </div>
