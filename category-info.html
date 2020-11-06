@@ -19,33 +19,40 @@
 <body>
   <nav class="navbar bg-primary navbar-dark navbar-expand-sm fixed-top">
     <div class="container">
-      <div class="col-lg-6 col-md-4 col-sm-3 d-flex justify-content-between">
+      <div class="col-lg-5 col-sm-3 d-flex justify-content-between">
         <a class="navbar-brand" href="index.html" style="color: white;">e-Mercado</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
           <span id="boton-menu" class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="col-lg-6 col-md-8 col-sm-9">
+      <div class="col-lg-7 col-sm-9">
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav w-100 justify-content-between">
             <li class="nav-item d-none d-md-block"><a class="nav-link" href="index.html"
                 style="color: white;">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="categories.html" style="color: white;">Categorias</a></li>
-            <li class="nav-item active"><a class="nav-link" href="products.html" style="color: white;">Productos</a>
+            <li class="nav-item"><a class="nav-link" href="products.html" style="color: white;">Productos</a>
             </li>
             <li class="nav-item d-none d-md-block"><a class="nav-link" href="sell.html" style="color: white;">Vender</a>
             </li>
             <li class="nav-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle px-0" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false" style="color: white;">
-                  Ingresar
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="cart.html">Mi carrito</a>
-                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-                  <a class="dropdown-item d-block d-md-none" href="sell.html">Vender</a>
-                  <a class="dropdown-item" onclick="cerrarSesion()">Cerrar sesion</a>
+              <div class="row align-items-center">
+                <div class="d-none d-sm-block col-sm-4">
+                  <img src="img/perfil_no_logueado.jpg" id="ImagenDropdown" style="width: 40px; border-radius: 20px;">
+                </div>
+                <div class="col-12 col-sm-8 pl-sm-0">
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle px-0" type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                      Ingresar
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                      <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                      <a class="dropdown-item d-block d-md-none" href="sell.html">Vender</a>
+                      <a class="dropdown-item" onclick="cerrarSesion()">Cerrar sesion</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>

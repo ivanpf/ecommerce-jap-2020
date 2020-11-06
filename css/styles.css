@@ -9,7 +9,9 @@ body {
 .site-header {
   font-family: 'Raleway', serif !important;
 }
-
+.contenedor-padre{
+  min-height: 490px;
+}
 .jumbotron .display-4 {
   font-weight: bold;
 }

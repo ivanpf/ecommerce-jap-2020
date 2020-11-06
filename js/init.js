@@ -52,9 +52,20 @@ function cerrarSesion() {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+
   var loc = window.location.pathname;
   var dir = loc.substring(loc.length, loc.lastIndexOf('/'));
   if (sessionStorage.getItem("usuario")) {
+    if (localStorage.getItem("usuario")) {
+      const usuario = JSON.parse(localStorage.getItem("usuario"));
+      if (sessionStorage.getItem("usuario") == usuario.username) {
+        if (usuario.imagen != "") {
+          document.getElementById("ImagenDropdown").setAttribute("src", usuario.imagen);
+        }
+      }
+    }else{
+      console.log("no existe el usuario en localstorage");
+    }
     document.getElementById("dropdownMenuButton").innerHTML = sessionStorage.getItem("usuario");
   } else {
     if (dir != "/login.html") {
