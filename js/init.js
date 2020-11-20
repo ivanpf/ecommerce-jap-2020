@@ -1,11 +1,11 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
-const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
-const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
-const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
-const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
-const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const CATEGORIES_URL = "http://localhost:3000/categorias"; //"https://japdevdep.github.io/ecommerce-api/category/all.json";
+const PUBLISH_PRODUCT_URL = "http://localhost:3000/producto-publicado"; //"https://japdevdep.github.io/ecommerce-api/product/publish.json";
+const CATEGORY_INFO_URL = "http://localhost:3000/categoria-info"; //"https://japdevdep.github.io/ecommerce-api/category/1234.json";
+const PRODUCTS_URL = "http://localhost:3000/productos"; //"https://japdevdep.github.io/ecommerce-api/product/all.json";
+const PRODUCT_INFO_URL = "http://localhost:3000/producto-info"; //"https://japdevdep.github.io/ecommerce-api/product/5678.json";
+const PRODUCT_INFO_COMMENTS_URL = "http://localhost:3000/producto-info-comentarios"; //"https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
+const CART_INFO_URL = "http://localhost:3000/carrito-info"; //"https://japdevdep.github.io/ecommerce-api/cart/987.json";
+const CART_BUY_URL = "http://localhost:3000/carrito-compra"; //"https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
 var showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -52,7 +52,6 @@ function cerrarSesion() {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-
   var loc = window.location.pathname;
   var dir = loc.substring(loc.length, loc.lastIndexOf('/'));
   if (sessionStorage.getItem("usuario")) {
@@ -63,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
           document.getElementById("ImagenDropdown").setAttribute("src", usuario.imagen);
         }
       }
-    }else{
-      console.log("no existe el usuario en localstorage");
+    } else if (sessionStorage.getItem("googleImage")) {
+      document.getElementById("ImagenDropdown").setAttribute("src", sessionStorage.getItem("googleImage"));
     }
     document.getElementById("dropdownMenuButton").innerHTML = sessionStorage.getItem("usuario");
   } else {

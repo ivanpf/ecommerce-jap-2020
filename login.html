@@ -8,6 +8,7 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="description" content="">
+
   <title>eMercado - Todo lo que busques está aquí</title>
   <link rel="stylesheet" href="css\login.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -20,20 +21,24 @@
 
 <body>
   <form action="index.html" class="login" id="formulario">
-    <img src="img/login.png" alt="">
-    <p>Iniciar sesión</p>
-    <div class="cont-campos">
-      <label>Usuario</label>
-      <br>
-      <input id="usuario" type="text" class="form-control mx-auto" required>
-    </div>
-    <div class="cont-campos">
-      <label>Contraseña</label>
-      <br>
-      <input id="contrasenia" type="password" class="form-control mx-auto" minlength="3" required>
-    </div>
-    <input type="submit" id="boton" value="Ingresar">
+    <div class="row">
+      <img src="img/login.png">
+      <div class="col-12 mt-3">
+        <label>Usuario</label>
+        <br>
+        <input id="usuario" type="text" class="form-control mx-auto mb-3" style="width: 190px;" required>
+      </div>
+      <div class="col-12">
+        <label>Contraseña</label>
+        <br>
+        <input id="contrasenia" type="password" class="form-control mx-auto" style="width: 190px;" minlength="3"
+          required>
+      </div>
+      <div class="col-12">
+        <input type="submit" id="boton" class="mx-auto" value="Ingresar" style="width: 140px;">
+      </div>
   </form>
+  </div>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
