@@ -84,7 +84,7 @@ function makeComment() {
             `;
             }
             htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action">
+            <div class="list-group-item list-group-item-action comment-container">
                 <p id="comment-score">` + estrellasToAppend + `</p>
                 <div id="comment-user-cont">
                     <p id="comment-user">` + document.getElementById('dropdownMenuButton').textContent + `</p>

@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
             globalProductsArray = article;
             mostrarProductoCarrito(article);
             document.getElementById("subtotalCostText").innerHTML = "USD " + cartSubTotal(article);
-            document.getElementById("totalCostText").innerHTML = "USD " + cartSubTotal(article);
+            document.getElementById("totalCostText").innerHTML = "USD " + Math.round(cartSubTotal(article) * 1.15);
             document.getElementById('comissionText').innerHTML = "USD " + Math.round(cartSubTotal(article) * 0.15);
-            radios = document.getElementsByName('deliveryType')
+            radios = document.getElementsByName('deliveryType');
             radios.forEach(radio => {
                 radio.addEventListener('click', function () {
                     subtotal = cartSubTotal(article, document.getElementsByClassName("countInput"));
@@ -70,7 +70,6 @@ function realizarCompra() {
         let mensaje = "Para finalizar la compra debe:\n";
         if (verificadorModal && verificadorDir) {
             getJSONData(CART_BUY_URL).then(function (resultObj) {
-                console.log(resultObj.data.msg);
                 exito.innerText = resultObj.data.msg;
                 exito.style.display = "block";
                 setTimeout(function () {
@@ -84,9 +83,7 @@ function realizarCompra() {
             document.getElementById('codCard').value = "";
             document.getElementById('venCard').value = "";
             document.getElementById('numTrans').value = "";
-            console.log(globalProductsArray);
             globalProductsArray = [];
-            console.log(globalProductsArray);
             mostrarProductoCarrito(globalProductsArray);
         } else {
             if (!verificadorDir) {
@@ -219,7 +216,7 @@ function mostrarProductoCarrito(arrayProductos) {
         }
     }
     document.getElementById("subtotalCostText").innerHTML = "USD " + cartSubTotal(arrayProductos);
-    document.getElementById("totalCostText").innerHTML = "USD " + cartSubTotal(arrayProductos);
+    document.getElementById("totalCostText").innerHTML = "USD " + Math.round(cartSubTotal(arrayProductos) * 1.15);
     document.getElementById('comissionText').innerHTML = "USD " + Math.round(cartSubTotal(arrayProductos) * 0.15);
     for (let i = 0; i < arrayProductos.length; i++) {
         let product = arrayProductos[i];
@@ -296,3 +293,20 @@ function cartTotalCost(array) {
     });
     return totalCost;
 }
+
+/* function comprar() {
+    fetch('http://localhost:3000/compras', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cart: {
+                username: sessionStorage.getItem('usuario'),
+                product: "2kg de papa"
+            }
+        }).then(function (res) {
+            console.log(res.json());
+        })
+    })
+} */
